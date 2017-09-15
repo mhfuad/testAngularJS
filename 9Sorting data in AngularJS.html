@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="9script.js"></script>
+</head>
+<body ng-app="myModule">
+	
+	<div ng-controller="myController">
+		<select name="" ng-model="sortColumn">
+			<option value="name">Name</option>
+			<option value="salary">Salary</option>
+			<option value="gender">Gender</option>
+			<option value="DateOfBirth">Date of Birth</option>
+		</select>
+		<table border="1">
+			<thead>
+				<th>Name</th>
+				<th>Date of Birth</th>
+				<th>Gender</th>
+				<th>Salary</th>
+				<th>Currency</th>
+			</thead>
+			<tbody ng-repeat="employee in employees | orderBy:sortColumn ">
+				<td>{{employee.name | uppercase}}</td>
+				<td>{{employee.DateOfBirth | date:"dd/MM/yyyy"}}</td>
+				<td>{{employee.gender | lowercase}}</td>
+				<td>{{employee.salary | number}}</td>
+				<td>{{employee.salary | currency:"T"}}</td>
+				
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

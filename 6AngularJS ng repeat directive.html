@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="6script.js"></script>
+</head>
+<body>
+	<!-- <div ng-controller="myController">
+		<table border="1">
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Age</th>
+					<th>Gender</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees">
+					<td>{{employee.firstName}}</td>
+					<td>{{employee.lastName}}</td>
+					<td>{{employee.age}}</td>
+					<td>{{employee.gender}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div> -->
+	<!-- <div ng-controller="myController">
+		<ul >
+			<li ng-repeat="country in countries">
+				{{country.name}} = Index -> {{$index}}
+				<ul >
+					<li ng-repeat="ci in country.cities">
+						{{ci.name}} - Parent Index = {{$parent.$index}}, Index = {{$index}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div> -->
+
+	<div ng-controller="myController">
+		<ul >
+			<li ng-repeat="country in countries" ng-init="parentIndex=$index">
+				{{country.name}} = Index -> {{$index}}
+				<ul >
+					<li ng-repeat="ci in country.cities">
+						{{ci.name}} - Parent Index = {{parentIndex}}, Index = {{$index}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="7script.js"></script>
+</head>
+<body>
+	<div ng-controller="myController">
+		<table border="1">
+			<thead>
+				<th>Name</th>
+				<th>Likes</th>
+				<th>Disliks</th>
+				<th>Likes/Dislikes</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="technology in technologys">
+					<td>{{technology.name}}</td>
+					<td>{{technology.likes}}</td>
+					<td>{{technology.disliks}}</td>
+					<td>
+						<button ng-click="incrementLiks(technology)">Likes</button>|
+						<button ng-click="incrementDisLiks(technology)">DisLikes</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="8script.js"></script>
+</head>
+<body>
+	
+	<div ng-controller="myController">
+	Number of row shown : <input type="number" step="1" max="5" ng-model="rowLimit"><br><br>
+		<table border="1">
+			<thead>
+				<th>Name</th>
+				<th>Date Of Birth</th>
+				<th>Gender</th>
+				<th>Salary</th>
+				<th>Currency</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat=" employee in employees | limitTo:rowLimit">
+					<td>{{employee.name | uppercase}}</td>
+					<td>{{employee.DateOfBirth | date:"dd-MM-yyyy"}}</td>
+					<td>{{employee.gender | lowercase}}</td>
+					<td>{{employee.salary | number}}</td>
+					<td>{{employee.salary | currency:"ঠ"}}</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+</body>
+</html>
