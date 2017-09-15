@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myModule">
 <head>
+	<style type="text/css">
+		.arrow-up{
+			width: 0px;
+			height: 0px;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-bottom: 10px solid black;
+			display: inline-block;
+		}
+
+		.arrow-down{
+			width: 0;
+			height: 0px;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-top: 10px solid black;
+			display: inline-block; 
+		}
+		th{
+			cursor: pointer;
+		}
+	</style>
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script type="text/javascript" src="angular.min.js"></script>
@@ -11,14 +33,14 @@
 		<table border="1">
 			<thead>
 				<tr>
-					<th>Name</th>
-					<th>Age</th>
-					<th>Gender</th>
-					<th>Salary</th>
+					<th ng-click="sortData('name')" >Name <div ng-class="getSortClass('name')"> </div></th>
+					<th ng-click="sortData('age')" >Age <div ng-class="getSortClass('age')"> </div></th>
+					<th ng-click="sortData('gender')" >Gender <div ng-class="getSortClass('gender')"> </div></th>
+					<th ng-click="sortData('salary')" >Salary <div ng-class="getSortClass('salary')"> </div></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="employee in employees | orderBy:'name'">
+				<tr ng-repeat="employee in employees | orderBy:sortColumn:reverseSort">
 					<td>{{employee.name | uppercase}}</td>
 					<td>{{employee.age | date}}</td>
 					<td>{{employee.gender | lowercase}}</td>
