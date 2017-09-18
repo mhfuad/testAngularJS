@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="16script.js"></script>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		<select name="" ng-model="divView">
+			<option value="16list.html">LIst</option>
+			<option value="16table.html">Table</option>
+		</select>
+		<div ng-include="divView"></div>
+	</div>
+	
+</body>
+</html>
