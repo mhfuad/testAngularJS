@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="18script.js"></script>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		{{error}}
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Salary</th>
+					<th>City</th>
+				</tr>
+			</thead>
+			<tbody>
+				<div>{{employees}}</div>
+				<tr ng-repeat="employee in employees">
+					<td>{{employee.name}}</td>
+					<td>{{employee.salary}}</td>
+					<td>{{employee.city}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
