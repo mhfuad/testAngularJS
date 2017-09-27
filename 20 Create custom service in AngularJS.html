@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="20script.js"></script>
+	<script type="text/javascript" src="20service.js"></script>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		<table>
+			<tr>
+				<td>Your String</td>
+				<td><input type="text" name="" ng-model="inputString"></td>
+			</tr>
+			<tr>
+				<td>Result:</td>
+				<td><input type="" name="" ng-model="outputString"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="Process" ng-click="transformString(inputString)"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
